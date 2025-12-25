@@ -1,0 +1,189 @@
+.card {
+    width: 280px;
+    height: 400px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    background: var(--bg-card);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    user-select: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* Rarity Styles */
+.card-common {
+    border-top: 4px solid var(--rarity-common);
+}
+
+.card-rare {
+    border-top: 4px solid var(--rarity-rare);
+}
+
+.card-epic {
+    border-top: 4px solid var(--rarity-epic);
+}
+
+.card-legendary {
+    border-top: 4px solid var(--rarity-legendary);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+/* Background Gradients */
+.card-common .card-inner {
+    background: linear-gradient(180deg, rgba(156, 163, 175, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card-rare .card-inner {
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card-epic .card-inner {
+    background: linear-gradient(180deg, rgba(217, 70, 239, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card-legendary .card-inner {
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card-inner {
+    padding: var(--spacing-lg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-type {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.card-rarity-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-common .card-rarity-badge {
+    color: var(--rarity-common);
+    border: 1px solid var(--rarity-common);
+}
+
+.card-rare .card-rarity-badge {
+    color: var(--rarity-rare);
+    border: 1px solid var(--rarity-rare);
+}
+
+.card-epic .card-rarity-badge {
+    color: var(--rarity-epic);
+    border: 1px solid var(--rarity-epic);
+}
+
+.card-legendary .card-rarity-badge {
+    color: var(--rarity-legendary);
+    border: 1px solid var(--rarity-legendary);
+    background: rgba(245, 158, 11, 0.2);
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.card-footer {
+    margin-top: auto;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+}
+
+.verification-tip {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+/* Card Back */
+.card-back {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-back .card-logo {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.card-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+/* Shine Effect */
+.card-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 60%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        height: 350px;
+        /* Bit shorter on mobile */
+    }
+}

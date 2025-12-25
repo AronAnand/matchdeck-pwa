@@ -1,0 +1,130 @@
+.pack-wrapper {
+    cursor: pointer;
+    position: relative;
+}
+
+.pack-wrapper .card-back {
+    background: repeating-linear-gradient(45deg,
+            #111,
+            #111 10px,
+            #1c1c21 10px,
+            #1c1c21 20px);
+    border: 4px solid #333;
+}
+
+.pack-wrapper .pack-label {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* 5 Card Reveal Layout */
+.pack-grid-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -40px;
+    /* Pull up a bit */
+}
+
+.select-title {
+    margin-bottom: var(--spacing-md);
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.cards-scroll {
+    display: flex;
+    gap: var(--spacing-md);
+    overflow-x: auto;
+    padding: 20px var(--spacing-lg) 40px var(--spacing-lg);
+    /* Bottom padding for hover effect */
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.cards-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.cards-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.card-wrapper-small {
+    flex: 0 0 200px;
+    scroll-snap-align: center;
+    transform-origin: center;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+}
+
+/* Adjust card size in the scroll view via scaling */
+.card-wrapper-small .card {
+    width: 200px;
+    height: 280px;
+}
+
+.card-wrapper-small .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    /* Slight grow */
+    z-index: 10;
+}
+
+.card-wrapper-small .card-title {
+    font-size: 1.1rem;
+}
+
+.card-wrapper-small .card-text {
+    font-size: 0.85rem;
+}
+
+.card-stage.confirmed {
+    animation: zoomIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
