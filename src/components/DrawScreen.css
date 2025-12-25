@@ -26,8 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -40px;
-    /* Pull up a bit */
+    margin-top: -20px;
 }
 
 .select-title {
@@ -38,54 +37,43 @@
 
 .cards-scroll {
     display: flex;
-    gap: var(--spacing-md);
-    overflow-x: auto;
-    padding: 20px var(--spacing-lg) 40px var(--spacing-lg);
-    /* Bottom padding for hover effect */
+    flex-wrap: wrap;
+    /* Allow wrapping so none are hidden */
+    justify-content: center;
+    /* Center everything */
+    gap: var(--spacing-sm);
+    padding: 20px;
     width: 100%;
-    max-width: 100vw;
+    max-width: 1200px;
     box-sizing: border-box;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    /* Remove scroll behaviors */
+    overflow-x: visible;
 }
 
-/* Hide scrollbar */
+/* Hide scrollbar removal since we don't scroll */
 .cards-scroll::-webkit-scrollbar {
     display: none;
 }
 
-.cards-scroll {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
 .card-wrapper-small {
-    flex: 0 0 200px;
-    scroll-snap-align: center;
-    transform-origin: center;
+    /* Fixed width for the wrapper */
+    width: 140px;
+    height: 196px;
+    position: relative;
+    /* Animation */
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+    /* Ensure clicked area is correct */
+    display: flex;
+    justify-content: center;
 }
 
-/* Adjust card size in the scroll view via scaling */
+/* Force card component to fit wrapper */
 .card-wrapper-small .card {
-    width: 200px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
 }
 
-.card-wrapper-small .card:hover {
-    transform: translateY(-10px) scale(1.05);
-    /* Slight grow */
-    z-index: 10;
-}
-
-.card-wrapper-small .card-title {
-    font-size: 1.1rem;
-}
-
-.card-wrapper-small .card-text {
-    font-size: 0.85rem;
-}
+/* Stagger animations via nth-child if inline styles fail, but inline is fine */
 
 .card-stage.confirmed {
     animation: zoomIn 0.5s ease-out;
