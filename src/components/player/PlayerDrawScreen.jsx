@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTournament } from '../../context/TournamentContext';
 import { navigate } from '../shared/Router';
 import Card from '../Card';
-import PlayerCardView from './PlayerCardView';
 import './PlayerDrawScreen.css';
 
 export default function PlayerDrawScreen({ code }) {
@@ -10,7 +9,6 @@ export default function PlayerDrawScreen({ code }) {
     const [playerData, setPlayerData] = useState(null);
     const [pack, setPack] = useState(null);
     const [packOpened, setPackOpened] = useState(false);
-    const [selectedCard, setSelectedCard] = useState(null);
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [tempSelectedCard, setTempSelectedCard] = useState(null);
 
@@ -54,17 +52,6 @@ export default function PlayerDrawScreen({ code }) {
         setShowConfirmation(true);
     };
 
-    const handleConfirmSelection = () => {
-        // Already saved, just update local state to show the card view
-        console.log('Confirming view, showing selected card');
-        setSelectedCard(tempSelectedCard);
-    };
-
-    const handleChangeSelection = () => {
-        // Go back to card selection
-        setTempSelectedCard(null);
-        setShowConfirmation(false);
-    };
 
     const handleExit = () => {
         navigate('/');
@@ -72,19 +59,6 @@ export default function PlayerDrawScreen({ code }) {
 
     if (!playerData) {
         return <div className="loading-screen">Loading...</div>;
-    }
-
-    // If already selected, show card view
-    if (selectedCard) {
-        return (
-            <PlayerCardView
-                playerName={playerData.player.name}
-                matchdayNumber={playerData.currentMatchday}
-                selectedCard={selectedCard}
-                code={code}
-                onExit={handleExit}
-            />
-        );
     }
 
     // If pack not opened yet, show pack
@@ -141,11 +115,6 @@ export default function PlayerDrawScreen({ code }) {
                                 </div>
                             );
                         })}
-                    </div>
-                    <div className="confirmation-actions">
-                        <button className="btn-confirm" onClick={handleConfirmSelection}>
-                            Yes, I Confirm This Selection
-                        </button>
                     </div>
                 </div>
             </div>
