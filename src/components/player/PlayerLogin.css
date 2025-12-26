@@ -1,0 +1,61 @@
+.player-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    padding: 20px;
+}
+
+.player-login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+}
+
+.player-login-container h1 {
+    margin: 0 0 8px 0;
+    font-size: 32px;
+    color: #1a202c;
+    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.player-login-subtitle {
+    margin: 0 0 32px 0;
+    font-size: 16px;
+    color: #718096;
+    text-align: center;
+}
+
+.player-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.code-input {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px;
+}
+
+@media (max-width: 480px) {
+    .player-login-container {
+        padding: 32px 24px;
+    }
+
+    .code-input {
+        font-size: 20px;
+    }
+}
