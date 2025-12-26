@@ -26,9 +26,12 @@ export default function PlayerDrawScreen({ code }) {
 
         setPlayerData(result);
 
-        // If player has already selected a card, show card view
-        if (result.matchdayData.selectedCard) {
-            setSelectedCard(result.matchdayData.selectedCard);
+        // If player has already selected a card, restore pack and show confirmation screen
+        if (result.matchdayData.selectedCard && result.matchdayData.pack) {
+            setPack(result.matchdayData.pack);
+            setTempSelectedCard(result.matchdayData.selectedCard);
+            setShowConfirmation(true);
+            // Don't set selectedCard yet - only after they click confirm
         }
     }, [code, playerLogin]);
 
