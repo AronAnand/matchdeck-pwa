@@ -1,0 +1,297 @@
+.player-draw-screen {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-info {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.player-info h2 {
+    margin: 20px 0 8px 0;
+    font-size: 28px;
+}
+
+.player-info p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 18px;
+    color: #718096;
+    background: #f7fafc;
+}
+
+.pack-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.pack-closed {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.pack-closed:hover {
+    transform: scale(1.05);
+}
+
+.pack-card {
+    width: 280px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.pack-back {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pack-logo {
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.3);
+    z-index: 2;
+}
+
+.pack-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+}
+
+.pack-hint {
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.pack-opening {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.pack-animation {
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.card-selection {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.card-selection h3 {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: 0 0 32px 0;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.card-wrapper {
+    animation: popIn 0.3s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.8);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card-wrapper:hover {
+    transform: scale(1.05);
+}
+
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card-confirmation {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card-confirmation h3 {
+    text-align: center;
+    color: #fbbf24;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-message {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin: 0 0 32px 0;
+    opacity: 0.9;
+}
+
+.cards-grid-reveal {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.card-reveal-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.selected-highlight {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.8));
+}
+
+.your-card-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1e3a8a;
+    padding: 8px 20px;
+    border-radius: 24px;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 6px 16px rgba(251, 191, 36, 0.6);
+    z-index: 10;
+    border: 2px solid white;
+    animation: bounce-badge 0.6s ease-in-out;
+}
+
+@keyframes bounce-badge {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-confirm {
+    padding: 16px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-confirm:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.6);
+}
+
+@media (max-width: 768px) {
+    .pack-card {
+        width: 240px;
+        height: 340px;
+    }
+
+    .pack-logo {
+        font-size: 60px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .cards-grid-reveal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card-reveal-wrapper {
+        max-width: 160px;
+    }
+
+    .your-card-badge {
+        font-size: 11px;
+        padding: 6px 14px;
+        top: -12px;
+    }
+
+    .card-confirmation h3 {
+        font-size: 22px;
+    }
+
+    .btn-confirm {
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+}

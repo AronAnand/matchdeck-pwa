@@ -1,0 +1,313 @@
+.tournament-detail {
+    min-height: 100vh;
+    background: #f7fafc;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+.tournament-meta {
+    font-size: 14px;
+    color: #718096;
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.tournament-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.players-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.players-section h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #1a202c;
+}
+
+.players-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.sort-controls label {
+    color: #718096;
+}
+
+.sort-controls select {
+    padding: 6px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.players-table {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-header,
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 2fr 1.5fr;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+}
+
+.table-header {
+    background: #f7fafc;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #718096;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-row {
+    border-bottom: 1px solid #f7fafc;
+    transition: background 0.2s;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row:hover {
+    background: #f7fafc;
+}
+
+.table-row.status-selected {
+    background: #f0fff4;
+}
+
+.table-row.status-selected:hover {
+    background: #e6ffed;
+}
+
+.table-row.status-pending {
+    background: #fffaf0;
+}
+
+.table-row.status-pending:hover {
+    background: #fff5e6;
+}
+
+.table-row.eliminated {
+    opacity: 0.6;
+}
+
+.col-name {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.col-code {
+    font-family: 'Courier New', monospace;
+}
+
+.no-code {
+    color: #cbd5e0;
+    font-size: 12px;
+}
+
+.col-status .status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.selected {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-badge.logged-in {
+    background: #bee3f8;
+    color: #2c5282;
+}
+
+.status-badge.pending {
+    background: #feebc8;
+    color: #744210;
+}
+
+.status-badge.eliminated {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.status-badge.no-matchday {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-title {
+    font-size: 14px;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.card-rarity {
+    font-size: 11px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.card-description {
+    font-size: 12px;
+    color: #718096;
+    line-height: 1.4;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.card-rarity.common {
+    color: #9ca3af;
+}
+
+.card-rarity.rare {
+    color: #3b82f6;
+}
+
+.card-rarity.epic {
+    color: #d946ef;
+}
+
+.card-rarity.legendary {
+    color: #f59e0b;
+}
+
+.no-selection {
+    color: #cbd5e0;
+}
+
+.col-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-action {
+    padding: 6px 12px;
+    font-size: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-reset {
+    background: #edf2f7;
+    color: #2d3748;
+}
+
+.btn-reset:hover {
+    background: #e2e8f0;
+}
+
+.btn-delete {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.btn-delete:hover {
+    background: #fc8181;
+    color: white;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 18px;
+    color: #718096;
+}
+
+@media (max-width: 1024px) {
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        padding: 16px;
+    }
+
+    .col-name::before,
+    .col-code::before,
+    .col-status::before,
+    .col-card::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        color: #718096;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    .col-actions {
+        margin-top: 12px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .tournament-actions {
+        flex-direction: column;
+    }
+
+    .players-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

@@ -10,7 +10,13 @@ export const TYPE = {
     BOOSTER: 'booster',
     FORMATION: 'formation',
     SCORING: 'scoring',
-    MODIFIER: 'modifier'
+    MODIFIER: 'modifier',
+    BENEFIT: 'benefit'
+};
+
+export const CARD_EFFECT = {
+    CONSTRAINT: 'constraint',  // Makes things harder (most existing cards)
+    BENEFIT: 'benefit'          // Gives advantages (new cards)
 };
 
 export const CARD_LIBRARY = [
@@ -238,4 +244,95 @@ export const CARD_LIBRARY = [
     { id: 178, title: "Chaos Round", text: "Apply 3 cards immediately.", type: TYPE.MODIFIER, rarity: RARITY.LEGENDARY },
     { id: 179, title: "Final Boss", text: "Play against the Organizer/Admin.", type: TYPE.MODIFIER, rarity: RARITY.LEGENDARY },
     { id: 180, title: "Ultimate Rule", text: "Admin creates a custom rule.", type: TYPE.MODIFIER, rarity: RARITY.LEGENDARY },
+
+    // --- E. BENEFICIAL CARDS (181-260) ---
+    // These cards give ADVANTAGES to the player (Fun tactical advantages for eFootball)
+
+    // Common Benefits (181-210)
+    { id: 181, title: "Super Sub Power", text: "Goals by substitutes count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 182, title: "Home Advantage", text: "You choose the stadium.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 183, title: "Captain's Goal", text: "Captain's goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 184, title: "Clean Sheet Bonus", text: "Clean sheet = 1 bonus goal added to score.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 185, title: "First Blood", text: "Your first goal counts as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 186, title: "Free Kick Master", text: "Free kick goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 187, title: "Corner King", text: "Corner kick goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 188, title: "Penalty Pro", text: "Penalty goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 189, title: "Counter Master", text: "Counter-attack goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 190, title: "Header Specialist", text: "Header goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 191, title: "Long Shot", text: "Goals outside box count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 192, title: "Late Drama", text: "Goals after 70th minute count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 193, title: "Early Bird", text: "Goals before 20th minute count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 194, title: "Defender's Glory", text: "Defender goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 195, title: "Midfielder Magic", text: "Midfielder goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 196, title: "Weather Choice", text: "You choose match weather.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 197, title: "Time Choice", text: "You choose match time (day/night).", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 198, title: "Kit Choice", text: "You choose which kit opponent wears.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 199, title: "Side Choice", text: "You choose which side to start.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 200, title: "Possession Bonus", text: "60%+ possession = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 201, title: "Shot Master", text: "10+ shots on target = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 202, title: "Pass Master", text: "85%+ pass accuracy = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 203, title: "Assist King", text: "3+ assists = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 204, title: "Tackle Master", text: "15+ tackles won = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 205, title: "No Red Card Bonus", text: "If you get no red cards, +0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 206, title: "Fair Play", text: "Less than 3 yellow cards = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 207, title: "GK Hero", text: "5+ saves = 0.5 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 208, title: "Comeback Bonus", text: "If you come from behind to win, +1 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 209, title: "Mercy Rule", text: "If losing by 3+, your goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+    { id: 210, title: "Opponent GK Ban", text: "Opponent cannot use their highest-rated GK.", type: TYPE.BENEFIT, rarity: RARITY.COMMON, effect: CARD_EFFECT.BENEFIT },
+
+    // Rare Benefits (211-235)
+    { id: 211, title: "Position Swap", text: "Choose 1 opponent player who must play out of position.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 212, title: "Bench Star", text: "Choose 1 opponent player who must start on bench.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 213, title: "Captain Choice", text: "You choose opponent's captain.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 214, title: "Formation Lock", text: "Opponent cannot change formation during match.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 215, title: "Sub Limit", text: "Opponent can only make 2 substitutions.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 216, title: "Set Piece Master", text: "All set piece goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 217, title: "Skill Move Bonus", text: "Goals after skill moves count as 2.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 218, title: "Comeback Specialist", text: "When losing at HT, 2nd half goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 219, title: "Pressure Master", text: "If losing, your goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 220, title: "Domination Bonus", text: "70%+ possession = 1 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 221, title: "Shot Accuracy", text: "80%+ shot accuracy = 1 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 222, title: "Pass Perfection", text: "90%+ pass accuracy = 1 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 223, title: "GK Masterclass", text: "8+ saves = 1 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 224, title: "Defensive Fortress", text: "20+ tackles won = 1 bonus goal.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 225, title: "Card Swap", text: "Swap one of your constraint cards with opponent's card for this match.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 226, title: "Rematch Option", text: "If you lose, replay this match once.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 227, title: "Full Control", text: "Choose stadium, weather, time, and side for this match.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 228, title: "Spy Card", text: "See opponent's selected card before this match starts.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 229, title: "Card Block", text: "Block one of opponent's constraint cards for this match.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 230, title: "Striker Ban", text: "Opponent cannot use their highest-rated attacker.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 231, title: "Weak Defense", text: "Opponent must use at least 2 defenders rated 85 or below.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 232, title: "No Legends", text: "Opponent cannot use Legend players.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 233, title: "Rating Cap", text: "Opponent cannot use players rated 96+.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 234, title: "Manager Choice", text: "You choose opponent's manager.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+    { id: 235, title: "Wrong Foot", text: "Opponent's star player (highest rated) must play on wrong foot.", type: TYPE.BENEFIT, rarity: RARITY.RARE, effect: CARD_EFFECT.BENEFIT },
+
+    // Epic Benefits (236-250)
+    { id: 236, title: "Squad Sabotage", text: "Choose 3 opponent players who must start on bench.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 237, title: "Formation Chaos", text: "Choose opponent's formation for this match.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 238, title: "Position Chaos", text: "Choose positions for opponent's top 3 rated players.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 239, title: "No Subs", text: "Opponent cannot make any substitutions.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 240, title: "Constraint Immunity", text: "Your constraint cards don't apply this match.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 241, title: "Steal Benefit", text: "Copy one of opponent's beneficial card effects.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 242, title: "Weak Bench", text: "Opponent's bench players must be rated 87 or below.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 243, title: "Goal Veto", text: "Opponent's first goal doesn't count.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 244, title: "All Goals x2", text: "All your goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 245, title: "Team Strength Cap", text: "Opponent's team strength max 2700.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 246, title: "Legend Ban", text: "Opponent cannot use any Legend players.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 247, title: "Rating Limit", text: "Opponent cannot use players rated 95+.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 248, title: "One Nation", text: "Opponent's XI must all be from same nation.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 249, title: "Complete Control", text: "Choose all match settings (stadium, weather, time, side, ball).", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+    { id: 250, title: "Manager Ban", text: "Opponent must use lowest-rated manager available.", type: TYPE.BENEFIT, rarity: RARITY.EPIC, effect: CARD_EFFECT.BENEFIT },
+
+    // Legendary Benefits (251-260)
+    { id: 251, title: "Full Squad Control", text: "Choose opponent's entire starting XI positions.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 252, title: "10-Player Team", text: "Opponent plays with 10 players (you choose who's benched).", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 253, title: "Bench XI", text: "Opponent must bench their top 5 rated players.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 254, title: "All Goals x3", text: "All your goals count as 3.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 255, title: "Swap All Cards", text: "Trade all your cards for opponent's cards this match.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 256, title: "Double Veto", text: "Opponent's first 2 goals don't count.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 257, title: "Draw = Win", text: "If match ends in draw, you win.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 258, title: "Rematch", text: "If you lose, replay the match once.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 259, title: "Total Freedom", text: "Ignore all your constraints, all goals count as 2.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
+    { id: 260, title: "Ultimate Handicap", text: "Opponent: Team Strength max 2500 + No formations changes + Max 1 sub.", type: TYPE.BENEFIT, rarity: RARITY.LEGENDARY, effect: CARD_EFFECT.BENEFIT },
 ];

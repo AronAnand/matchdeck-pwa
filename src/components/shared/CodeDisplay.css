@@ -1,0 +1,103 @@
+.code-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f7fafc;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.code-display-small {
+    padding: 4px 8px;
+    gap: 6px;
+}
+
+.code-display-large {
+    padding: 12px 16px;
+    gap: 12px;
+    font-size: 18px;
+}
+
+.code-text {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: #2d3748;
+    letter-spacing: 1px;
+}
+
+.code-display-small .code-text {
+    font-size: 12px;
+}
+
+.code-display-large .code-text {
+    font-size: 20px;
+}
+
+.code-copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.code-copy-btn:hover {
+    background: #e2e8f0;
+}
+
+.code-copy-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: #4a5568;
+}
+
+.code-display-small .code-copy-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+.code-display-large .code-copy-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -32px;
+    right: 0;
+    background: #2d3748;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+}
+
+.copy-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #2d3748;
+}

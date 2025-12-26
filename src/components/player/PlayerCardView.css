@@ -1,0 +1,124 @@
+.player-card-view {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    padding: 20px;
+}
+
+.player-card-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 32px;
+    padding: 20px;
+}
+
+.player-card-header h2 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+}
+
+.player-card-header p {
+    margin: 4px 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.player-code {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    margin-top: 12px !important;
+}
+
+.player-code span {
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.player-card-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.selection-notice {
+    background: rgba(72, 187, 120, 0.2);
+    border: 2px solid rgba(72, 187, 120, 0.6);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.selection-notice svg {
+    width: 24px;
+    height: 24px;
+    color: #48bb78;
+}
+
+.selected-card-display {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card-view-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-exit {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-exit:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-view-note {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .player-card-header h2 {
+        font-size: 24px;
+    }
+
+    .selection-notice {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .selection-notice svg {
+        width: 20px;
+        height: 20px;
+    }
+}

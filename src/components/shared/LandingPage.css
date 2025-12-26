@@ -1,0 +1,122 @@
+.landing-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.landing-container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.landing-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: white;
+    margin: 0 0 16px 0;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.landing-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 60px 0;
+}
+
+.landing-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+}
+
+.option-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.option-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+}
+
+.option-card h2 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    color: #1a202c;
+}
+
+.option-card p {
+    margin: 0;
+    font-size: 16px;
+    color: #718096;
+    line-height: 1.5;
+}
+
+.landing-footer {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.landing-footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .landing-title {
+        font-size: 48px;
+    }
+
+    .landing-subtitle {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .landing-options {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .option-card {
+        padding: 32px;
+    }
+
+    .option-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .option-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .option-card h2 {
+        font-size: 24px;
+    }
+}
