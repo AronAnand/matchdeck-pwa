@@ -41,19 +41,19 @@ export default function PlayerDrawScreen({ code }) {
         }, 800);
     };
 
-    const handleSelectCard = (card) => {
-        // Show confirmation with all cards revealed
-        console.log('Card selected for confirmation:', card);
+    const handleSelectCard = async (card) => {
+        // Save selection immediately to database
+        console.log('Card selected, saving to database:', card);
+        console.log('Pack:', pack);
+        await savePlayerSelection(code, card, pack);
+        console.log('Selection saved, showing confirmation');
         setTempSelectedCard(card);
         setShowConfirmation(true);
     };
 
-    const handleConfirmSelection = async () => {
-        // Save selection
-        console.log('Confirming selection:', tempSelectedCard);
-        console.log('Pack:', pack);
-        await savePlayerSelection(code, tempSelectedCard, pack);
-        console.log('Selection confirmed, updating local state');
+    const handleConfirmSelection = () => {
+        // Already saved, just update local state to show the card view
+        console.log('Confirming view, showing selected card');
         setSelectedCard(tempSelectedCard);
     };
 
